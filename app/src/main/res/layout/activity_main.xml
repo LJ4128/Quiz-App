@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/turquoise"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Who has the highest 3pt % in NBA history?"
+        android:textSize="32sp"
+        android:id="@+id/Question"
+        android:textColor="@color/violet"
+        />
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/questionAnswers_RG"
+        >
+
+        <RadioButton
+            android:id="@+id/answerA_RB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/violet"
+            android:text="Joe Harris"
+            />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/answerB_RB"
+            android:textColor="@color/violet"
+            android:text="Stephen Curry"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/answerC_RB"
+            android:textColor="@color/violet"
+            android:text="Steve Nash"
+            />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/answerD_RB"
+            android:textColor="@color/violet"
+            android:text="Steve Kerr"
+            />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/done_BTN"
+        android:layout_width="107dp"
+        android:layout_height="63dp"
+        android:text="DONE" />
+
+</LinearLayout>
