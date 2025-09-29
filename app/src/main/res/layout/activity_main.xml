@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Who has the highest 3pt % in NBA history?"
+        android:text="@string/str_q1"
         android:textSize="32sp"
         android:id="@+id/Question"
         android:textColor="@color/violet"
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/violet"
-            android:text="Joe Harris"
+            android:text="@string/joe_harris"
             />
 
         <RadioButton
@@ -33,21 +33,21 @@
             android:layout_height="wrap_content"
             android:id="@+id/answerB_RB"
             android:textColor="@color/violet"
-            android:text="Stephen Curry"
+            android:text="@string/stephen_curry"
             />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/answerC_RB"
             android:textColor="@color/violet"
-            android:text="Steve Nash"
+            android:text="@string/steve_nash"
             />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/answerD_RB"
             android:textColor="@color/violet"
-            android:text="Steve Kerr"
+            android:text="@string/steve_kerr"
             />
     </RadioGroup>
 
@@ -55,6 +55,6 @@
         android:id="@+id/done_BTN"
         android:layout_width="107dp"
         android:layout_height="63dp"
-        android:text="DONE" />
+        android:text="@string/str_done_btn" />
 
 </LinearLayout>

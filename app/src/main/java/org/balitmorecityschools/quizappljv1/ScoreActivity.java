@@ -23,7 +23,7 @@ public class ScoreActivity extends AppCompatActivity {
         incomingIntent = getIntent();
         score = incomingIntent.getIntExtra("score",score);
         scoreTV = (TextView) findViewById(R.id.scoreTV);
-        scoreTV.setText("You've answered " + score + " question(s) correct so far!");
+        scoreTV.setText(getString(R.string.score_msg_pt1) + score + getString(R.string.score_msg_pt2));
 
     }
 }

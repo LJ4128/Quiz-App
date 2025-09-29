@@ -40,18 +40,20 @@ public class MainActivity extends AppCompatActivity {
         doneBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 clickCounter = clickCounter + 1;
                 if (clickCounter == 1) {
                     if (selectedRB.getId() == dRB.getId()) {
                         score++;
-                        Toast correct = Toast.makeText(MainActivity.this, "Correct, Steve Kerr has the highest 3pt % in NBA history.", Toast.LENGTH_LONG);
+                        Toast correct = Toast.makeText(MainActivity.this, R.string.q1_correct_msg, Toast.LENGTH_LONG);
                         correct.show();
+
                     }
                     else {
-                        Toast incorrect = Toast.makeText(MainActivity.this, "Incorrect, Steve Kerr has the highest 3pt % in NBA history.", Toast.LENGTH_LONG);
+                        Toast incorrect = Toast.makeText(MainActivity.this, R.string.q1_incorrect_msg, Toast.LENGTH_LONG);
                         incorrect.show();
                     }
-                    doneBTN.setText("CONTINUE");
+                    doneBTN.setText(R.string.str_continue_btn);
                 }
                 if (clickCounter == 2) {
                     Intent scoreScreen = new Intent(MainActivity.this, ScoreActivity.class);
