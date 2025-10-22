@@ -46,8 +46,13 @@ public class MainActivity extends AppCompatActivity {
         q2 = new Question("What year was the NBA founded?", "1946", "1951", "1937", "1944","This was the year before the start of The Cold War.", "Correct.", "Incorrect, the NBA was founded in 1946.");
         q3 = new Question("What team had the longest win streak in NBA history?", "Los Angeles Lakers", "Golden State Warriors", "Miami Heat", "Houston Rockets", "This team won 17 Championships.", "Correct.", "Incorrect, the Los Angeles Lakers has the longest win streak in NBA history.");
         q4 = new Question("Who won MVP of 1983?", "Moses Malone", "Larry Bird", "Magic Johnson","Kareem Abdul-Jabbar", "This player was on the Philadelphia 76ers.", "Correct,", "Incorrect, Moses Malone won MVP of 1983.");
-        q5 = new Question("Who won Rookie of the Year in 1990", "David Robinson", "Derrick Coleman", "Gary Payton", "Tyrone Hill", "This player was nicknamed \"The Admiral\" for his time spend in the U.S. Navy.", "Correct", "Incorrect, David Robinson won Rookie of the Year in 1990");
-        q6 = new Question("Who was the #1 overall draft pick in 2003", "LeBron James", "Carmelo Anthony", "Chris Bosh", "Dwayne Wade", "","Correct","Incorrect, LeBron James was the #1 overall draft pick in 2003.");
+        q5 = new Question("Who won Rookie of the Year in 1990.", "David Robinson", "Derrick Coleman", "Gary Payton", "Tyrone Hill", "This player was nicknamed \"The Admiral\" for his time spend in the U.S. Navy.", "Correct", "Incorrect, David Robinson won Rookie of the Year in 1990");
+        q6 = new Question("Who was the #1 overall draft pick in 2003.", "LeBron James", "Carmelo Anthony", "Chris Bosh", "Dwayne Wade", "This player was drafted into the Cleavland Cavalivers.","Correct","Incorrect, LeBron James was the #1 overall draft pick in 2003.");
+        q7 = new Question("Who was MVP of 1993?", "Charles Barkley", "Hakeem Olajuwon", "Michael Jordan", "Shaquille O\'Neal", "This player retired and became an NBA Analyst.", "Correct.", "Incorrect, Charles Barkley was MVP of 1993");
+        q8 = new Question("What year did Magic Johnson retire?", "1996", "1994", "1997", "1992", "Tupac Shakur died in this year.", "Correct.", "Incorrect, Magic Johnson retired in 1996.");
+        q9 = new Question("What year was Larry Bird drafted into the NBA?", "1978", "1980", "1977", "1976", "The signing of the Camp David Accords between Egypt and Israel happened in this year.", "Correct.", "Incorrect, Larry Bird was drafted in 1978.");
+        q10 = new Question("According to the NBA's stats, who is statistically the best player in NBA history?", "LeBron James", "Kobe Bryant", "Michael Jordan", "Kareem Abdul-Jabbar", "This player owns a school.", "Correct.", "Incorrect, LeBron James is statistically the best player in NBA history.");
+
         doneBTN.setVisibility(View.INVISIBLE);
         hintViewed = false;
         doneCounter = 0;
