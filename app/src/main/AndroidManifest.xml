@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizAppLJV1">
         <activity
-            android:name=".Question1Correct"
+            android:name=".HintViewActivity"
             android:exported="false" />
         <activity
             android:name=".ScoreActivity"

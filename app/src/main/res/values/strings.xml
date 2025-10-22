@@ -1,15 +1,15 @@
 <resources>
     <string name="app_name">Quiz App LJ v1</string>
     <string name="str_done_btn">DONE</string>
-    <string name="q1_correct_msg">Correct, Steve Kerr has the highest 3pt % in NBA history.</string>
+    <string name="correct_msg">Correct.</string>
     <string name="steve_kerr">Steve Kerr</string>
-    <string name="q1_incorrect_msg">Incorrect, Steve Kerr has the highest 3pt % in NBA history."</string>
+    <string name="q1_incorrect_msg">Incorrect, Steve Kerr has the highest 3pt % in NBA history.</string>
     <string name="str_continue_btn">CONTINUE</string>
     <string name="str_q1">Who has the highest 3pt % in NBA history?</string>
     <string name="joe_harris">Joe Harris</string>
     <string name="stephen_curry">Stephen Curry</string>
     <string name="steve_nash">Steve Nash</string>
-    <string name="score_msg_pt1">"You've answered "</string>
-    <string name="score_msg_pt2">" question(s) correct so far!"</string>
+    <string name="score_msg_pt1">You\'ve scored </string>
+    <string name="score_msg_pt2">/100 on the NBA history quiz!</string>
 
 </resources>

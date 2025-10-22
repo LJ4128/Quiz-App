@@ -9,9 +9,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/str_q1"
+        android:text=""
         android:textSize="32sp"
-        android:id="@+id/Question"
+        android:id="@+id/Question_TV"
         android:textColor="@color/violet"
         />
     <RadioGroup
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/violet"
-            android:text="@string/joe_harris"
+            android:text=""
             />
 
         <RadioButton
@@ -33,14 +33,14 @@
             android:layout_height="wrap_content"
             android:id="@+id/answerB_RB"
             android:textColor="@color/violet"
-            android:text="@string/stephen_curry"
+            android:text=""
             />
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/answerC_RB"
             android:textColor="@color/violet"
-            android:text="@string/steve_nash"
+            android:text=""
             />
         <RadioButton
             android:layout_width="wrap_content"
@@ -56,5 +56,12 @@
         android:layout_width="107dp"
         android:layout_height="63dp"
         android:text="@string/str_done_btn" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/hint_BTN"
+        android:text="HINT?"
+        android:layout_marginTop="40pt"
+        />
 
 </LinearLayout>
