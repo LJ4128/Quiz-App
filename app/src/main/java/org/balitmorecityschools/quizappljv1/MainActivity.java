@@ -11,12 +11,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import java.util.ArrayList;
 
@@ -42,16 +38,16 @@ public class MainActivity extends AppCompatActivity {
         bRB = findViewById(R.id.answerB_RB);
         cRB = findViewById(R.id.answerC_RB);
         dRB = findViewById(R.id.answerD_RB);
-        q1 = new Question(getString(R.string.str_q1),getString(R.string.steve_kerr),getString(R.string.stephen_curry),getString(R.string.steve_nash),getString(R.string.joe_harris),"This player is currently the head coach of an nba team.", getString(R.string.correct_msg),getString(R.string.q1_incorrect_msg));
-        q2 = new Question("What year was the NBA founded?", "1946", "1951", "1937", "1944","This was the year before the start of The Cold War.", "Correct.", "Incorrect, the NBA was founded in 1946.");
-        q3 = new Question("What team had the longest win streak in NBA history?", "Los Angeles Lakers", "Golden State Warriors", "Miami Heat", "Houston Rockets", "This team won 17 Championships.", "Correct.", "Incorrect, the Los Angeles Lakers has the longest win streak in NBA history.");
-        q4 = new Question("Who won MVP of 1983?", "Moses Malone", "Larry Bird", "Magic Johnson","Kareem Abdul-Jabbar", "This player was on the Philadelphia 76ers.", "Correct,", "Incorrect, Moses Malone won MVP of 1983.");
-        q5 = new Question("Who won Rookie of the Year in 1990.", "David Robinson", "Derrick Coleman", "Gary Payton", "Tyrone Hill", "This player was nicknamed \"The Admiral\" for his time spend in the U.S. Navy.", "Correct", "Incorrect, David Robinson won Rookie of the Year in 1990");
-        q6 = new Question("Who was the #1 overall draft pick in 2003.", "LeBron James", "Carmelo Anthony", "Chris Bosh", "Dwayne Wade", "This player was drafted into the Cleavland Cavalivers.","Correct","Incorrect, LeBron James was the #1 overall draft pick in 2003.");
-        q7 = new Question("Who was MVP of 1993?", "Charles Barkley", "Hakeem Olajuwon", "Michael Jordan", "Shaquille O\'Neal", "This player retired and became an NBA Analyst.", "Correct.", "Incorrect, Charles Barkley was MVP of 1993");
-        q8 = new Question("What year did Magic Johnson retire?", "1996", "1994", "1997", "1992", "Tupac Shakur died in this year.", "Correct.", "Incorrect, Magic Johnson retired in 1996.");
-        q9 = new Question("What year was Larry Bird drafted into the NBA?", "1978", "1980", "1977", "1976", "The signing of the Camp David Accords between Egypt and Israel happened in this year.", "Correct.", "Incorrect, Larry Bird was drafted in 1978.");
-        q10 = new Question("According to the NBA's stats, who is statistically the best player in NBA history?", "LeBron James", "Kobe Bryant", "Michael Jordan", "Kareem Abdul-Jabbar", "This player owns a school.", "Correct.", "Incorrect, LeBron James is statistically the best player in NBA history.");
+        q1 = new Question(getString(R.string.str_q1),getString(R.string.steve_kerr),getString(R.string.stephen_curry),getString(R.string.steve_nash),getString(R.string.joe_harris),getString(R.string.str_q1_hint), getString(R.string.correct_msg),getString(R.string.q1_incorrect_msg));
+        q2 = new Question(getString(R.string.str_q2), getString(R.string.str_1946), getString(R.string.str_1951), getString(R.string.str_1937), getString(R.string.str_1944),getString(R.string.str_q2_hint), getString(R.string.correct_msg), getString(R.string.q2_incorrect_msg));
+        q3 = new Question(getString(R.string.str_q3), getString(R.string.los_angeles_lakers), getString(R.string.golden_state_warriors), getString(R.string.miami_heat), getString(R.string.houston_rockets), getString(R.string.str_q3_hint), getString(R.string.correct_msg), getString(R.string.q3_incorrect_msg));
+        q4 = new Question(getString(R.string.str_q4), getString(R.string.moses_malone), getString(R.string.larry_bird), getString(R.string.magic_johnson),getString(R.string.kareem_abdul_jabbar), getString(R.string.str_q4_hint), getString(R.string.correct_msg), getString(R.string.q4_incorrect_msg));
+        q5 = new Question(getString(R.string.str_q5), getString(R.string.david_robinson), getString(R.string.derrick_coleman), getString(R.string.gary_payton), getString(R.string.tyrone_hill), getString(R.string.str_q5_hint), getString(R.string.correct_msg), getString(R.string.q5_incorrect_msg));
+        q6 = new Question(getString(R.string.str_q6), getString(R.string.lebron_james), getString(R.string.carmelo_anthony), getString(R.string.chris_bosh), getString(R.string.dwayne_wade), getString(R.string.str_q6_hint),getString(R.string.correct_msg),getString(R.string.q6_incorrect_msg));
+        q7 = new Question(getString(R.string.str_q7), getString(R.string.charles_barkley), getString(R.string.hakeem_olajuwon), getString(R.string.michael_jordan), getString(R.string.shaquille_o_neal), getString(R.string.str_q7_hint), getString(R.string.correct_msg), getString(R.string.q7_incorrect_msg));
+        q8 = new Question(getString(R.string.str_q8), getString(R.string.str_1996), getString(R.string.str_1994), getString(R.string.str_1997), getString(R.string.str_1992), getString(R.string.str_q8_hint), getString(R.string.correct_msg), getString(R.string.q8_incorrect_msg));
+        q9 = new Question(getString(R.string.str_q9), getString(R.string.str_1978), getString(R.string.str_1980), getString(R.string.str_1977), getString(R.string.str_1976), getString(R.string.str_q9_hint), getString(R.string.correct_msg), getString(R.string.q9_incorrect_msg));
+        q10 = new Question(getString(R.string.str_q10), getString(R.string.lebron_james), getString(R.string.kobe_bryant), getString(R.string.michael_jordan), getString(R.string.kareem_abdul_jabbar), getString(R.string.str_q10_hint), getString(R.string.correct_msg), getString(R.string.q10_incorrect_msg));
 
         doneBTN.setVisibility(View.INVISIBLE);
         hintViewed = false;
@@ -79,13 +75,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 hintCounter += 1;
                 if (hintCounter == 1){
-                    Toast warning = Toast.makeText(MainActivity.this, "Viewing the hint will reduce the points you earn,", Toast.LENGTH_LONG);
+                    Toast warning = Toast.makeText(MainActivity.this, R.string.str_hint_warning, Toast.LENGTH_LONG);
                     warning.show();
                 }
-                if (hintCounter == 2){
+                if (hintCounter > 1
+                ){
                     hintViewed = true;
                     Intent hintScreen = new Intent(MainActivity.this, HintViewActivity.class);
-                    hintScreen.putExtra("hintSTR",currentQuestion.getHintText());
+                    hintScreen.putExtra(getString(R.string.hintstr),currentQuestion.getHintText());
                     startActivity(hintScreen);
                 }
             }
@@ -97,15 +94,16 @@ public class MainActivity extends AppCompatActivity {
                 doneCounter = doneCounter + 1;
                 if (doneCounter == 1)
                 {
-                    if (selectedRB.getText().equals(currentQuestion.getCorrectAnswer()) && hintViewed == false) {
+                    if (selectedRB.getText().equals(currentQuestion.getCorrectAnswer()) && !hintViewed) {
                         questionPoints = 10;
                         Toast correct = Toast.makeText(MainActivity.this,currentQuestion.correctMessage, Toast.LENGTH_LONG);
                         correct.show();
 
                     }
-                    else if(selectedRB.getText().equals(currentQuestion.getCorrectAnswer()) && hintViewed == true){
+                    else if(selectedRB.getText().equals(currentQuestion.getCorrectAnswer()) && hintViewed){
                         questionPoints = 5;
                         Toast correct = Toast.makeText(MainActivity.this,currentQuestion.correctMessage, Toast.LENGTH_LONG);
+                        correct.show();
                     }
                     else {
                         Toast incorrect = Toast.makeText(MainActivity.this, currentQuestion.getIncorrectMessage(), Toast.LENGTH_LONG);
@@ -119,14 +117,14 @@ public class MainActivity extends AppCompatActivity {
                 {
                     totalScore += questionPoints;
                     Intent scoreScreen = new Intent(MainActivity.this, ScoreActivity.class);
-                    scoreScreen.putExtra("totalScore", totalScore);
+                    scoreScreen.putExtra(getString(R.string.totalscore), totalScore);
                     startActivity(scoreScreen);
                 }
                 else if(doneCounter == 2)
                 {
                     totalScore += questionPoints;
                     nextQuestion(choiceList);
-                    doneBTN.setText("DONE");
+                    doneBTN.setText(R.string.done);
                 }
 
             }
@@ -153,6 +151,8 @@ public class MainActivity extends AppCompatActivity {
     }
     private void nextQuestion(ArrayList<RadioButton> choiceList)
     {
+        questionAnswersRG.clearCheck();
+        doneBTN.setVisibility(View.INVISIBLE);
         currentQuestion = questionList[questionCounter];
         setQnA(currentQuestion,choiceList,questionTV);
         doneCounter = 0;
@@ -161,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         questionCounter++;
         hintViewed = false;
         hintBTN.setVisibility(View.VISIBLE);
+
 
     }
 

@@ -22,9 +22,9 @@ public class ScoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_score);
         totalScore = 0;
         incomingIntent = getIntent();
-        totalScore = incomingIntent.getIntExtra("totalScore",totalScore);
+        totalScore = incomingIntent.getIntExtra(getString(R.string.totalscore),totalScore);
         scoreTV = (TextView) findViewById(R.id.scoreTV);
-        scoreTV.setText(getString(R.string.score_msg_pt1) + totalScore + getString(R.string.score_msg_pt2));
+        scoreTV.setText(getString(R.string.score_msg_pt1) + " " + totalScore + getString(R.string.score_msg_pt2));
 
 
     }

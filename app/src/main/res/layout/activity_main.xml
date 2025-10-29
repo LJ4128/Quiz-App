@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/answerD_RB"
             android:textColor="@color/violet"
-            android:text="@string/steve_kerr"
+            android:text=""
             />
     </RadioGroup>
 
@@ -55,12 +55,12 @@
         android:id="@+id/done_BTN"
         android:layout_width="107dp"
         android:layout_height="63dp"
-        android:text="@string/str_done_btn" />
+        android:text="@string/done" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/hint_BTN"
-        android:text="HINT?"
+        android:text="@string/hint"
         android:layout_marginTop="40pt"
         />
 

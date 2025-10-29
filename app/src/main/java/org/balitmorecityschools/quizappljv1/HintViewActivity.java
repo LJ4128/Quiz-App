@@ -21,7 +21,7 @@ public class HintViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hint_view);
         hintTV = findViewById(R.id.hint_TV);
         incomingIntent = getIntent();
-        hintSTR = incomingIntent.getStringExtra("hintSTR");
+        hintSTR = incomingIntent.getStringExtra(getString(R.string.hintstr));
         hintTV.setText(hintSTR);
 
 
