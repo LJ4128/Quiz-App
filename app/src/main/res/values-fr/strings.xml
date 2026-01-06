@@ -77,4 +77,8 @@
     <string name="totalscore">totalScore</string>
     <string name="done">FAIT</string>
     <string name="hint">INDICE?</string>
+    <string name="welcome_back_100">Bienvenue de retour ! Votre meilleur score est de 100, voyons si vous pouvez l\'atteindre à nouveau.</string>
+    <string name="welcome_new_player">Bienvenue, nouveau joueur.</string>
+    <string name="welcome_back_part_1">Bienvenue de retour, votre meilleur score jusqu\'à présent est de </string>
+    <string name="welcome_back_part_2">. Pouvons-nous obtenir un score plus élevé cette fois-ci?</string>
 </resources>

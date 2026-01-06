@@ -76,4 +76,8 @@
     <string name="totalscore">totalScore</string>
     <string name="done">DONE</string>
     <string name="hint">HINT?</string>
+    <string name="welcome_back_100">Welcome back, your highest score is a 100, lets see if you can get that again.</string>
+    <string name="welcome_new_player">Welcome, new player.</string>
+    <string name="welcome_back_part_1">"Welcome back, your highest score so far is a "</string>
+    <string name="welcome_back_part_2">. Can we score higher this time?</string>
 </resources>

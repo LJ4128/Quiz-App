@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class QuizActivity extends AppCompatActivity {
     TextView questionTV;
     Question[] questionList;
     Question currentQuestion, q1, q2, q3, q4, q5, q6, q7, q8, q9, q10;
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_quiz);
         questionTV = findViewById(R.id.Question_TV);
         questionAnswersRG = findViewById(R.id.questionAnswers_RG);
         doneBTN = findViewById(R.id.done_BTN);
@@ -75,13 +75,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 hintCounter += 1;
                 if (hintCounter == 1){
-                    Toast warning = Toast.makeText(MainActivity.this, R.string.str_hint_warning, Toast.LENGTH_LONG);
+                    Toast warning = Toast.makeText(QuizActivity.this, R.string.str_hint_warning, Toast.LENGTH_LONG);
                     warning.show();
                 }
                 if (hintCounter > 1
                 ){
                     hintViewed = true;
-                    Intent hintScreen = new Intent(MainActivity.this, HintViewActivity.class);
+                    Intent hintScreen = new Intent(QuizActivity.this, HintViewActivity.class);
                     hintScreen.putExtra(getString(R.string.hintstr),currentQuestion.getHintText());
                     startActivity(hintScreen);
                 }
@@ -96,17 +96,17 @@ public class MainActivity extends AppCompatActivity {
                 {
                     if (selectedRB.getText().equals(currentQuestion.getCorrectAnswer()) && !hintViewed) {
                         questionPoints = 10;
-                        Toast correct = Toast.makeText(MainActivity.this,currentQuestion.correctMessage, Toast.LENGTH_LONG);
+                        Toast correct = Toast.makeText(QuizActivity.this,currentQuestion.correctMessage, Toast.LENGTH_LONG);
                         correct.show();
 
                     }
                     else if(selectedRB.getText().equals(currentQuestion.getCorrectAnswer()) && hintViewed){
                         questionPoints = 5;
-                        Toast correct = Toast.makeText(MainActivity.this,currentQuestion.correctMessage, Toast.LENGTH_LONG);
+                        Toast correct = Toast.makeText(QuizActivity.this,currentQuestion.correctMessage, Toast.LENGTH_LONG);
                         correct.show();
                     }
                     else {
-                        Toast incorrect = Toast.makeText(MainActivity.this, currentQuestion.getIncorrectMessage(), Toast.LENGTH_LONG);
+                        Toast incorrect = Toast.makeText(QuizActivity.this, currentQuestion.getIncorrectMessage(), Toast.LENGTH_LONG);
                         incorrect.show();
                         questionPoints = 0;
                     }
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
                 else if((doneCounter == 2) && (questionCounter == questionList.length))
                 {
                     totalScore += questionPoints;
-                    Intent scoreScreen = new Intent(MainActivity.this, ScoreActivity.class);
+                    Intent scoreScreen = new Intent(QuizActivity.this, ScoreActivity.class);
                     scoreScreen.putExtra(getString(R.string.totalscore), totalScore);
                     startActivity(scoreScreen);
                 }

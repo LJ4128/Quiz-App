@@ -15,6 +15,20 @@
         android:id="@+id/scoreTV"
         android:textColor="@color/black"
         />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="What is your name?"
+        android:textSize="32sp"
+        android:id="@+id/nameET"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:id="@+id/leaderboardBTN"
+        android:text="SUBMIT SCORES"
+        />
 
 
 
