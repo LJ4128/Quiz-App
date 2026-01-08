@@ -66,14 +66,10 @@ public class LeaderboardScreen extends AppCompatActivity {
                 if (leaderboardList.size() >= 1){
                     for (LeaderboardEntry user : leaderboardList){
                         leaderboardSTR = leaderboardSTR + user.toString() + "\n";
-                        leaderboardTV.setText(leaderboardSTR);
                     }
-                    // leaderboard is working, come back and only display the top 5.
-
+                    leaderboardTV.setText(leaderboardSTR);
                 }
-
             }
-
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value

@@ -29,10 +29,11 @@ public class ScoreActivity extends AppCompatActivity {
     final String SCORE_KEY = "SCORE";
     final String SUBMITTED_KEY = "SUBMITTED";
     final String ID_KEY = "ID";
+    final String NAME_KEY = "NAME";
     boolean submitted;
     Button leaderboardBTN;
     EditText nameET;
-    String name, deviceID;
+    String name, savedName, deviceID;
     FirebaseDatabase database;
     DatabaseReference myRef;
     LeaderboardEntry user;
@@ -74,6 +75,10 @@ public class ScoreActivity extends AppCompatActivity {
                 }
                 else {
                     name = nameET.getText().toString();
+                    savedName = " " + name;
+                    spEditor = myPrefs.edit();
+                    spEditor.putString(NAME_KEY, savedName);
+                    spEditor.apply();
                     submitted = true;
                     spEditor.putBoolean(SUBMITTED_KEY, submitted);
                     spEditor.apply();
@@ -95,9 +100,14 @@ public class ScoreActivity extends AppCompatActivity {
 
         int highScore = myPrefs.getInt(SCORE_KEY,0);
         spEditor = myPrefs.edit();
-        if(highScore<totalScore){
+        if(highScore<=totalScore){
             spEditor.putInt(SCORE_KEY, totalScore);
             spEditor.apply();
+            deviceID = myPrefs.getString(ID_KEY, "null");
+            if (!(deviceID.equals("null"))){
+                myRef.child(deviceID).child("score").setValue(totalScore);
+            }
+
         }
 
 

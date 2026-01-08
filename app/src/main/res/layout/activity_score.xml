@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:textSize="32sp"
         android:id="@+id/leaderboardBTN"
-        android:text="SUBMIT SCORES"
+        android:text="SUBMIT SCORES TO LEADERBOARD"
         />
 
 

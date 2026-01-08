@@ -20,8 +20,10 @@ public class WelcomeActivity extends AppCompatActivity {
     TextView greetingTV;
     Button startBTN, leaderboardBTN;
     SharedPreferences myPrefs;
+    String name;
     final String SHARED_PREF_FILE = "org.baltimorecityschools.sharefpreferenceslj";
     final String SCORE_KEY = "SCORE";
+    final String NAME_KEY = "NAME";
 
 
 
@@ -35,10 +37,11 @@ public class WelcomeActivity extends AppCompatActivity {
         leaderboardBTN = findViewById(R.id.leaderboardBTN);
         myPrefs = getSharedPreferences(SHARED_PREF_FILE, MODE_PRIVATE);
         int highScore = myPrefs.getInt(SCORE_KEY, 0);
+        name = myPrefs.getString(NAME_KEY, "");
         if (highScore == 100){
-            greetingTV.setText(R.string.welcome_back_100);
+            greetingTV.setText("Welcome back" + name + ", You're highest score is a 100, lets see if you can get that again.");
         } else if (highScore > 0) {
-            greetingTV.setText(getString(R.string.welcome_back_part_1) + highScore + getString(R.string.welcome_back_part_2));
+            greetingTV.setText("Welcome back" + name + ", You're highest score so far is a " + highScore + getString(R.string.welcome_back_part_2));
         }
         else {
             greetingTV.setText(R.string.welcome_new_player);
