@@ -1,6 +1,7 @@
 package org.balitmorecityschools.quizappljv1;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -31,7 +32,7 @@ public class ScoreActivity extends AppCompatActivity {
     final String ID_KEY = "ID";
     final String NAME_KEY = "NAME";
     boolean submitted;
-    Button leaderboardBTN;
+    Button leaderboardBTN, restartBTN;
     EditText nameET;
     String name, savedName, deviceID;
     FirebaseDatabase database;
@@ -39,6 +40,7 @@ public class ScoreActivity extends AppCompatActivity {
     LeaderboardEntry user;
 
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +52,7 @@ public class ScoreActivity extends AppCompatActivity {
         totalScore = 0;
         submitted = myPrefs.getBoolean(SUBMITTED_KEY, false);
         deviceID = myPrefs.getString(ID_KEY,"");
+        restartBTN = findViewById(R.id.restartBTN);
         leaderboardBTN = findViewById(R.id.leaderboardBTN);
         leaderboardBTN.setVisibility(View.INVISIBLE);
         nameET = findViewById(R.id.nameET);
@@ -89,6 +92,8 @@ public class ScoreActivity extends AppCompatActivity {
                     uploaded.show();
                     nameET.setVisibility(View.INVISIBLE);
                     leaderboardBTN.setVisibility(View.INVISIBLE);
+                    spEditor.putString(ID_KEY, deviceID);
+                    spEditor.apply();
 
 
 
@@ -97,16 +102,22 @@ public class ScoreActivity extends AppCompatActivity {
 
             }
         });
+        restartBTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         int highScore = myPrefs.getInt(SCORE_KEY,0);
+        String name = myPrefs.getString(NAME_KEY,"user");
         spEditor = myPrefs.edit();
         if(highScore<=totalScore){
             spEditor.putInt(SCORE_KEY, totalScore);
             spEditor.apply();
             deviceID = myPrefs.getString(ID_KEY, "null");
-            if (!(deviceID.equals("null"))){
-                myRef.child(deviceID).child("score").setValue(totalScore);
-            }
+            user = new LeaderboardEntry(name, totalScore, deviceID);
+            myRef.child(deviceID).setValue(user);
 
         }
 
