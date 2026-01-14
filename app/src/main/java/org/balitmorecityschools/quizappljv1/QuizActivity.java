@@ -119,6 +119,9 @@ public class QuizActivity extends AppCompatActivity {
                     Intent scoreScreen = new Intent(QuizActivity.this, ScoreActivity.class);
                     scoreScreen.putExtra(getString(R.string.totalscore), totalScore);
                     startActivity(scoreScreen);
+                    recreate();
+                    questionAnswersRG.clearCheck();
+                    doneBTN.setVisibility(View.INVISIBLE);
                 }
                 else if(doneCounter == 2)
                 {

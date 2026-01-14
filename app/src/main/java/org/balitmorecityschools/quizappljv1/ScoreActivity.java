@@ -106,6 +106,7 @@ public class ScoreActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 finish();
+
             }
         });
 
@@ -120,11 +121,6 @@ public class ScoreActivity extends AppCompatActivity {
             myRef.child(deviceID).setValue(user);
 
         }
-
-
-
-
-
 
 
 
