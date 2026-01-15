@@ -21,13 +21,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class LeaderboardScreen extends AppCompatActivity {
-    TextView leaderboardTV;
+    TextView leaderboardNamesTV, leaderboardScoresTV;
     FirebaseDatabase database;
     DatabaseReference myRef;
     LeaderboardEntry myUser, temp;
     int userIndex;
-    String leaderboardSTR;
+    String leaderboardNamesSTR, leaderboardScoresSTR;
     ArrayList<LeaderboardEntry> leaderboardList;
+    int leaderboardPosition;
     final String TAG = "FANPOFPAJNOIEWFNNpNIRNANIAPIRE";
 
     @Override
@@ -37,8 +38,11 @@ public class LeaderboardScreen extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         myRef = database.getReference("message");
         userIndex = 0;
-        leaderboardSTR = "";
-        leaderboardTV = findViewById(R.id.leaderboardTV);
+        leaderboardPosition = 1;
+        leaderboardNamesSTR = "";
+        leaderboardNamesSTR = "";
+        leaderboardNamesTV = findViewById(R.id.leaderboardNamesTV);
+        leaderboardScoresTV = findViewById(R.id.leaderboardScoresTV);
         leaderboardList = new ArrayList<>();
         ValueEventListener idk = new ValueEventListener() {
             @Override
@@ -59,15 +63,20 @@ public class LeaderboardScreen extends AppCompatActivity {
                     myUser = new LeaderboardEntry(name, score, deviceID);
 
                     leaderboardList.add(myUser);
-                    leaderboardSTR = "";
+                    leaderboardPosition = 1;
+                    leaderboardNamesSTR = "";
+                    leaderboardScoresSTR = "";
                 }
                 Collections.sort(leaderboardList,Collections.reverseOrder());
 
                 if (leaderboardList.size() >= 1){
                     for (LeaderboardEntry user : leaderboardList){
-                        leaderboardSTR = leaderboardSTR + user.toString() + "\n";
+                        leaderboardNamesSTR = leaderboardNamesSTR + leaderboardPosition + ". " + user.getName() + "\n";
+                        leaderboardScoresSTR = leaderboardScoresSTR + user.getScore() + "\n";
+                        leaderboardPosition++;
                     }
-                    leaderboardTV.setText(leaderboardSTR);
+                    leaderboardNamesTV.setText(leaderboardNamesSTR);
+                    leaderboardScoresTV.setText(leaderboardScoresSTR);
                 }
             }
             @Override
